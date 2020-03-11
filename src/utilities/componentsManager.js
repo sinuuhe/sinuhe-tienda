@@ -1,4 +1,5 @@
 import actions from '../store/actions'
+
 //  iterate
 function runScript (component) {
   var componentScript = component.script.slice(8, -9)
@@ -29,10 +30,13 @@ function triggerAction (component) {
 export default {
   getScript (component) {
     var response = actions.getLocalScript(component.$options.name)
-    if (response.place === 'header') {
+    if (response.place === 'header' && response.script.length > 5) {
       runScript(response)
     } else {
       triggerAction(response)
     }
+  },
+  loadComponents () {
+    actions.loadComponents()
   }
 }

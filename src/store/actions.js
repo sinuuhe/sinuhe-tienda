@@ -1,4 +1,6 @@
 import state from './state'
+import httpUtilities from '../utilities/httpUtilities'
+import axios from 'axios'
 
 export default {
   addToCartAction ({ commit }, payload) {
@@ -21,7 +23,14 @@ export default {
     commit('payProductsMutation')
   },
   setAppComponents ({ commit }, payload) {
-    commit('setAppComponents', payload)
+    axios
+      .post(httpUtilities.componentsUrl, payload)
+      .then(response => {
+        commit('setAppComponents', payload)
+      })
+      .catch(function (error) {
+        console.log(error)
+      })
   },
   getLocalScript (payload) {
     var appComponents = state.components
@@ -33,5 +42,15 @@ export default {
     })
 
     return localComponent
+  },
+  loadComponents ({ commit }) {
+    axios
+      .get(httpUtilities.componentsUrl)
+      .then(response => {
+        commit('setAppComponents', response.data.components)
+      })
+      .catch(function (error) {
+        console.log(error)
+      })
   }
 }

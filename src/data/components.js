@@ -2,7 +2,7 @@ export default [
   {
     'name': 'AddToCartButton',
     'type': 'component',
-    'script': '<script>console.log("Agregado al carro")</script>',
+    'script': '<script>console.log("Agregado al CARRO")</script>',
     'place': 'event'
   },
   {
@@ -50,7 +50,7 @@ export default [
   {
     'name': 'ProductInfo',
     'type': 'page',
-    'script': '<script>console.log("VISITANDO PRODUCTOS")</script>',
+    'script': '<script>console.log("VISITANDO PRODUCTOS En específico")</script>',
     'place': 'header'
   },
   {

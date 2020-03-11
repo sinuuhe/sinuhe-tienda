@@ -32,9 +32,19 @@
 
 <script>
 import NavBar from './components/NavBar'
+import { mapActions } from 'vuex'
+
 export default {
   components: {
     NavBar
+  },
+  beforeMount () {
+    this.loadComponents()
+  },
+  methods: {
+    ...mapActions([
+      'loadComponents'
+    ])
   }
 }
 </script>

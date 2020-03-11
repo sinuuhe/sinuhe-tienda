@@ -31,15 +31,13 @@ export default {
         total += product.price
         return {
           producto: product.name,
-          precio: '$' + product.price,
-          opciones: ''
+          precio: '$' + product.price
         }
       })
 
       formatedCart.push({
         producto: 'Total',
-        precio: '$' + total,
-        opciones: ''
+        precio: '$' + total
       })
 
       this.formatedCart = formatedCart

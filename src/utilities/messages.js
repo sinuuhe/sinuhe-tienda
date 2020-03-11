@@ -18,9 +18,15 @@ var unsuccesfulPayment = {
   message: 'No se pudo completar su compra. Intente de nuevo'
 }
 
+var infoSaved = {
+  title: 'Guardado',
+  message: 'Ajustes guardados correctamente'
+}
+
 export default {
   addToCart,
   productAlreadyInCart,
   succesfulPayment,
-  unsuccesfulPayment
+  unsuccesfulPayment,
+  infoSaved
 }

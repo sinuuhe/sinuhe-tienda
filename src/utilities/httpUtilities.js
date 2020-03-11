@@ -1,11 +1,7 @@
-var baseUrl = 'http://localhost:8181/api/'
-var tasksUrl = baseUrl + '/tasks/'
-var lastTask = tasksUrl + 'last'
-var categoriesUrl = baseUrl + '/categories/'
+var baseUrl = 'https://us-central1-tienda-ae51c.cloudfunctions.net/'
+var componentsUrl = baseUrl + '/components/'
 
 export default {
   baseUrl,
-  tasksUrl,
-  lastTask,
-  categoriesUrl
+  componentsUrl
 }
